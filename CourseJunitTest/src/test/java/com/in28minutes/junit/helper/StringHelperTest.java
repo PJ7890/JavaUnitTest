@@ -6,20 +6,44 @@ import org.junit.Test;
 
 public class StringHelperTest {
 
-  	@Test
+	/* @Test
+	public void test() {
+		StringHelper helper = new StringHelper();
+		String actual = helper.truncateAInFirst2Positions("AACD");
+		String expected = "CD";
+		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		assertEquals(expected,actual);
+	} */
+	
+	//I actually created a lot of variables to really make it easy for you to understand.
+	//use InlineVariables, to do that-> right click on the varaibles-> (ex: actual) -> Refactor -> Inline
+	
+	@Test
 	public void test1() {
-		//expected :<ABC[]> but was :<ABC[D]>
-		assertEquals("ABC", "ABCD");//this makes test fail/ red bar
-		  //     expected , Actual
-	}  
-   
-  //	Now Change the Actual Value to ABC
+		StringHelper helper = new StringHelper();
+		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		assertEquals("CD",helper.truncateAInFirst2Positions("AACD"));
+	} 
 	
 	@Test
 	public void test2() {
-		//expected :<ABC[]> but was :<ABC[D]>
-		assertEquals("ABC", "ABC");//this makes test pass/ Green bar
-		  //     expected , Actual
+		StringHelper helper = new StringHelper();
+		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		assertEquals("CD",helper.truncateAInFirst2Positions("ACD"));
+	} 
+	
+	@Test
+	public void test3() {
+		StringHelper helper = new StringHelper();
+		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		assertEquals("CDEF",helper.truncateAInFirst2Positions("CDEF"));
+	} 
+	
+	@Test
+	public void test4() {
+		StringHelper helper = new StringHelper();
+		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		assertEquals("CDAA",helper.truncateAInFirst2Positions("CDAA"));
 	} 
 }
 
