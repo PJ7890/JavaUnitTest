@@ -20,32 +20,64 @@ public class StringHelperTest {
 	StringHelper helper = new StringHelper();
 	//in all methods we have given the StringHelper object . so instead of that i created its instance here
 	
+	
+	//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
 	@Test
 	public void testTruncateAInFirst2Positions1() {
-		
-		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		//AACD=>CD 
 		assertEquals("CD",helper.truncateAInFirst2Positions("AACD"));
 	} 
 	
 	@Test
 	public void testTruncateAInFirst2Positions2() {
-		
-		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		//ACD=>CD 
 		assertEquals("CD",helper.truncateAInFirst2Positions("ACD"));
 	} 
 	
 	@Test
 	public void testTruncateAInFirst2Positions3() {
-		
-		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		//CDEF=>CDEF 
 		assertEquals("CDEF",helper.truncateAInFirst2Positions("CDEF"));
 	} 
 	
 	@Test
 	public void testTruncateAInFirst2Positions4() {
-		
-		//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
+		//CDAA=>CDAA
 		assertEquals("CDAA",helper.truncateAInFirst2Positions("CDAA"));
 	} 
+	
+	
+	//ABCD=>false, ABAB=>true, AB=>true, A=>false
+	/* @Test
+	public void testAreFirstAndLastTwoCharactersTheSame_BasicNegativeScenario() {
+		boolean actualValue = helper.areFirstAndLastTwoCharactersTheSame("ABCD");
+		boolean expectedValue = false;
+		assertEquals(expectedValue, actualValue);
+	} */
+	//Use Inline now
+	
+	@Test
+	//ABCD=>false
+	public void testAreFirstAndLastTwoCharactersTheSame_BasicNegativeScenario1() {
+		assertFalse( helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+	}
+	
+	@Test
+	//ABAB=>true
+	public void testAreFirstAndLastTwoCharactersTheSame_BasicPositiveScenario2() {
+		assertTrue( helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+	
+	@Test
+	//AB=>true
+	public void testAreFirstAndLastTwoCharactersTheSame_BasicPositiveScenario3() {
+		assertTrue( helper.areFirstAndLastTwoCharactersTheSame("AB"));
+	}
+	
+	@Test
+	//A=>false
+	public void testAreFirstAndLastTwoCharactersTheSame_BasicNegativeScenario4() {
+		assertFalse( helper.areFirstAndLastTwoCharactersTheSame("A"));
+	}
 }
 
