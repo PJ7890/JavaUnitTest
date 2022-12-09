@@ -2,6 +2,7 @@ package com.in28minutes.junit.helper;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class StringHelperTest {
@@ -17,8 +18,12 @@ public class StringHelperTest {
 	//I actually created a lot of variables to really make it easy for you to understand.
 	//use InlineVariables, to do that-> right click on the varaibles-> (ex: actual) -> Refactor -> Inline
 	
-	StringHelper helper = new StringHelper();
-	//in all methods we have given the StringHelper object . so instead of that i created its instance here
+	StringHelper helper;
+	
+	@Before
+	public void setUp() {
+		helper= new StringHelper();
+	}
 	
 	
 	//AACD=>CD ACD=>CD CDEF=>CDEF CDAA=>CDAA
