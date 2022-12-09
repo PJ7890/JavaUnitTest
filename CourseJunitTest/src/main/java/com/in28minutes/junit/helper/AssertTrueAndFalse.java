@@ -1,5 +1,8 @@
 package com.in28minutes.junit.helper;
 
+
+/////Extra Activities
+
 public class AssertTrueAndFalse {
 
 	public boolean isEvenNumber(int number) {
