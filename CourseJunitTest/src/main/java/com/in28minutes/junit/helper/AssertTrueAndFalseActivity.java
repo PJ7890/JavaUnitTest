@@ -3,7 +3,7 @@ package com.in28minutes.junit.helper;
 
 /////Extra Activities
 
-public class AssertTrueAndFalse {
+public class AssertTrueAndFalseActivity {
 
 	public boolean isEvenNumber(int number) {
 		boolean result = false;

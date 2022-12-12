@@ -15,7 +15,7 @@ public class ListTestExtraActivity {
 	
 	@Before
 	public void setUp() {
-		list = new ArrayList();
+		list = new ArrayList<>();
 		list.add(3);
 		list.add(1);
 		list.add(4);
