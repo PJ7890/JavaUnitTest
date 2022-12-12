@@ -8,9 +8,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class AssertTrueAndFalseTest {
+public class AssertTrueAndFalseTestActivity {
 
-	AssertTrueAndFalse asft = new AssertTrueAndFalse();
+	AssertTrueAndFalseActivity asft = new AssertTrueAndFalseActivity();
 	
 	@Test
 	public void testEvenNumber1() {
