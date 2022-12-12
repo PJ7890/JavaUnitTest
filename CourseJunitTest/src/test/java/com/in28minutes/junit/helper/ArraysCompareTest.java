@@ -21,5 +21,32 @@ public class ArraysCompareTest {
 		//if i give this above wrong expectedvalue then it will says this below
 		//arrays first differed at element [1]; expected:<4> but was:<3>
 	}
+	
+	/*@Test
+	public void testArraySort_NullArray() {
+		int[] number = null;
+		Arrays.sort(number);
+	}*/
+	//im getting the nullPointerException becuase not a real code is going wrong , but the code manner is not correct.
+	
+	
+	/*@Test
+	public void testArraySort_NullArray() {
+		int[] numbers = null;
+		try {
+			Arrays.sort(numbers);
+			
+		}catch(NullPointerException e) {
+			//success
+		}
+	}*/
+	//but we need @testing related code 
+	
+	@Test(expected = NullPointerException.class)
+	public void testArraySort_NullArray() {
+		int[] numbers = null;
+		Arrays.sort(numbers);	
+	}
+	//this is the actual format of exception
 
 }
