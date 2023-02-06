@@ -3,7 +3,11 @@ package com.practicee.business.implementation;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -49,6 +53,25 @@ public class TodoBusinessImplMockTest {
 			
 			//then - asserts
 			assertThat(filteredTodos.size(),is(2));
+		}
+		
+		@Test
+		public void testDeleteTodosNotRelatedToSpring_usingBDD() {
+			//Given
+			TodoService todoServiceMock = mock(TodoService.class);
+			List<String> todos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn To Dance");
+			given(todoServiceMock.retreiveTodos("Dummy")).willReturn(todos);
+			TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoServiceMock);
+			
+			//when
+			todoBusinessImpl.deleteTodosNotRelatedToSpring("Dummy");
+			
+			//then
+			verify(todoServiceMock,times(1)).deleteTodos("Learn To Dance");	
+			
+			then(todoServiceMock).should().deleteTodos("Learn To Dance");
+			
+			//verifying that the methos is not called. we use never()
 		}
 	}
 

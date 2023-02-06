@@ -7,4 +7,6 @@ import java.util.List;
 public interface TodoService {
     
 	public List<String> retreiveTodos(String user);
+	
+	public void deleteTodos(String todo);
 }
