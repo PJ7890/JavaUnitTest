@@ -1,7 +1,9 @@
 package com.practicee.business.implementation;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -54,6 +56,19 @@ public class ListTest {
 		//Arguement Matcher
 		when(listMock.get(anyInt())).thenThrow(new RuntimeException("Something"));
 		listMock.get(0);
+	}
+	
+	@Test
+	public void letsMockTestGet_usingBDD() {
+		//Given
+		List<String> listMock = mock(List.class);
+		given(listMock.get(anyInt())).willReturn("in28Minutes");
+		
+		//when
+		String firstElement = listMock.get(0);
+		
+		//then
+		assertThat(firstElement, is("in28Minutes"));
 	}
 
 }
