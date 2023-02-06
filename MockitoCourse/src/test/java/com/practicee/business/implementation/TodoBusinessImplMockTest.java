@@ -67,11 +67,15 @@ public class TodoBusinessImplMockTest {
 			todoBusinessImpl.deleteTodosNotRelatedToSpring("Dummy");
 			
 			//then
-			verify(todoServiceMock,times(1)).deleteTodos("Learn To Dance");	
+			verify(todoServiceMock).deleteTodos("Learn To Dance");
 			
-			then(todoServiceMock).should().deleteTodos("Learn To Dance");
+			verify(todoServiceMock, times(1)).deleteTodos("Learn To Dance");
 			
-			//verifying that the methos is not called. we use never()
+			//verify(todoServiceMock,never()).deleteTodos("Learn Spring MVC");
+
+			//verify(todoServiceMock,never()).deleteTodos("Learn Spring");
+
+			//verifying that the methods is not called. we use never()
 		}
 	}
 
