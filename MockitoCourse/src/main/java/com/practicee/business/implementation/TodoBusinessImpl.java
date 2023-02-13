@@ -33,7 +33,7 @@ public class TodoBusinessImpl {
 		List<String> todos = todoService.retreiveTodos(user);
 		for(String todo : todos) {
 			if(!todos.contains("Spring")) {
-				todoService.deleteTodos(todo);
+				todoService.deleteTodo(todo);
 			}
 		}
 	}
